@@ -214,14 +214,14 @@ const MainPage = () => {
                 </div>
             </section>
 
-            <section class="section_04">
-                <div class="inner">
-                    <div class="title" data-aos="fade-up" data-aos-duration="3000">
+            <section className="section_04">
+                <div className="inner">
+                    <div className="title" data-aos="fade-up" data-aos-duration="3000">
                         <h5>성심당 패밀리 브랜드</h5>
                     </div>
                 </div>
 
-                <div class="brand_wrap">
+                <div className="brand_wrap">
                     <img src="img/b_logo1.png" alt="오븐스토리" />
                     <img src="img/b_logo2.png" alt="삐아또" />
                     <img src="img/b_logo3.png" alt="테라스키친" />
