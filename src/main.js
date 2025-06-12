@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { useEffect, useState } from 'react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -9,9 +9,27 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
+
 const MainPage = () => {
+    const [popup, setpopup] = useState(true);
+
+    //탑버튼
+    const topBtn = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
     return (
         <main className="main">
+            {popup && <div id="popup">
+                <div className="image"><img src="img/popup_img.jpg" alt="구매 대행 및 RESELL 금지" /></div>
+                <button className="close_btn" onClick={() => setpopup(false)}>
+                    <img src="img/close_btn.png" alt="close button" />
+                </button>
+            </div>}
+
             <section className="main_visual">
                 <Swiper autoplay={{
                     delay: 2500,
@@ -86,7 +104,7 @@ const MainPage = () => {
                 </div>
 
                 <div className="top5">
-                    <div className="item_wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div className="item_wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
                         <div className="item item_01">
                             <img src="img/best_01.png" alt="순수롤" />
 
@@ -100,7 +118,7 @@ const MainPage = () => {
                     </div>
 
 
-                    <div className="item_wrapper" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="350">
+                    <div className="item_wrapper" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
                         <div className="item item_02">
                             <img src="img/best_02.png" alt="토요빵" />
 
@@ -111,7 +129,7 @@ const MainPage = () => {
                         </div>
                     </div>
 
-                    <div className="item_wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="350">
+                    <div className="item_wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
                         <div className="item item_03">
                             <img src="img/best_03.png" alt="튀김 소보로" />
 
@@ -124,7 +142,7 @@ const MainPage = () => {
                         </div>
                     </div>
 
-                    <div className="item_wrapper" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="350">
+                    <div className="item_wrapper" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
                         <div className="item item_04">
                             <img src="img/best_04.png" alt="순수롤" />
 
@@ -236,6 +254,16 @@ const MainPage = () => {
                     <img src="img/b_logo6.png" alt="오븐스토리" />
                 </div>
             </section>
+
+            <div className="btn_wrap">
+                <Link className="cs">
+                    cs
+                </Link>
+
+                <button type="button" className="top_btn" onClick={topBtn}>
+                    <img src="img/top_arrow.png" alt="탑 버튼" />
+                </button>
+            </div>
         </main>
     )
 }
